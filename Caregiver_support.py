@@ -29,13 +29,23 @@
 # Changes are committed regularly and well commented. Readme file is thorough. (Verified through activity log)
 # _______________________________________________________________________________________________________________________
 
-def start ():
-    print ("Hello, ")
+name = input ("Hello, what is your name?")
+print ("Hello, " + name)
 
 
 def location ():
-    loc = "Where are you located?"
+    loc = input ("Are you located in Atlanta (metro Atlanta is acceptable)? (Y/N)")
+if loc.startswith == 'y':
+    print ("")
+else:
+    print ("")
 
+def menu ():
+
+# print ("Great! We have recoures available for you.")
+# print ("Here are your options: ")
+    print ("") 
+         
 def well_being():
     print ("")
 
