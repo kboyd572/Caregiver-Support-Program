@@ -29,6 +29,28 @@
 # Changes are committed regularly and well commented. Readme file is thorough. (Verified through activity log)
 # _______________________________________________________________________________________________________________________
 
+# inspirational quotes to show user each session
+quotes = [
+    '“It is so important, as a caregiver, not to become so enmeshed in your role that you lose yourself.” - Dana Reeve'
+    '“It is not how much you do, but how much love you put into the doing.” - Mother Teresa'
+    '“Never believe that a few caring people can’t change the world. For, indeed, that`s all who ever have.” - Margaret Mead'
+    # '“Caregiving often calls us to lean into love we didn’t know was possible.” - Tia Walker'
+    # '“If you have the courage to begin, you have the courage to succeed.” - David Viscott'
+    # '“Rest and self-care are so important. When you take time to replenish your spirit, it allows you to serve others from the overflow.” - Eleanor Brown'
+]
+
+quiz_questions = [
+
+question": "What is an early warning sign of caregiver stress?",
+        "options": [
+            "A) Feeling energized every day",
+            "B) Losing interest in activities you once enjoyed",
+            "C) Sleeping too well",
+            "D) Having too much free time"
+        ],
+        "answer": 1  # B
+
+]
 #Ask for user name, so user can be address and program is more personalable
 name = input ("Hello, what is your name?")
 print ("Hello, " + name)
