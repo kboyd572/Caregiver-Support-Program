@@ -41,18 +41,7 @@ quotes = [
     # '“Rest and self-care are so important. When you take time to replenish your spirit, it allows you to serve others from the overflow.” - Eleanor Brown'
 ]
 
-quiz_questions = [
 
-question": "What is an early warning sign of caregiver stress?",
-        "options": [
-            "A) Feeling energized every day",
-            "B) Losing interest in activities you once enjoyed",
-            "C) Sleeping too well",
-            "D) Having too much free time"
-        ],
-        "answer": 1  # B
-
-]
 #Ask for user name, so user can be address and program is more personalable
 name = input ("Hello, what is your name?")
 print ("Hello, " + name)
@@ -121,13 +110,139 @@ def community ():
     print ("")
     print ("")
     print ("")
+
 def daily_quote():
     print ("")
     print ("")
 
 def caregiver_quiz():
-    print()
-    print ("")
-    print ("")
-    print ("")
-    print ("")
+#quiz for user to test their knowledge on caregivers
+    print("CAREGIVER KNOWLEDGE QUIZ")
+print("____________________________________  ")
+print("What do know about caregivers? Answer these questions.")
+print("Input the letter of the answer of your choice: (A, B, C, or D).")
+print("")
+
+#set the score variable to 0, so it can be calculated as quiz is completed
+score = 0
+
+# question 1
+print("Question 1: What is caregiver burnout?")
+print("A) Feeling bored with caregiving")
+print("B) A state of physical, emotional, and mental exhaustion from caregiving")
+print("C) Taking too many breaks")
+print("D) Being paid too little for caregiving")
+
+ques1_answer = input("Your answer: ")
+
+#if statement - to determince correctness of answers prints to show user their answer is correct.
+if ques1_answer == "B" or ques1_answer == "b":
+   # prints to show user their answer is correct.
+    print("Correct!")
+    
+    #if the user chooses the correct answer, then score will add increment of 1 
+    score = score + 1
+else:
+    #if incorrect, then score will not increase
+    print("Incorrect. The correct answer was B.")
+print("")
+
+# question 2
+print("Question 2: Which of the following is a healthy coping strategy for caregivers?")
+print("A) Ignoring your own needs completely")
+print("B) Isolating yourself from friends and family")
+print("C) Joining a caregiver support group")
+print("D) Working longer hours without breaks")
+
+ques2_answer = input("Your answer: ")
+if ques2_answer == "C" or ques2_answer == "c":
+    print("Correct!")
+    
+    #if the user chooses the correct answer, then score will add increment of 1 
+    score = score + 1
+else:
+    #if incorrect, then score will not increase
+    print("Incorrect. The correct answer was C.")
+print("")
+
+# question 3
+print("Question 3: Which condition is commonly associated with needing a caregiver?")
+print("A) Alzheimer's disease")
+print("B) Common cold")
+print("C) Seasonal allergies")
+print("D) Minor sprain")
+
+ques3_answer = input("Your answer: ")
+if ques3_answer == "A" or ques3_answer == "a":
+    print("Correct!")
+    
+    #if the user chooses the correct answer, then score will add increment of 1 
+    score = score + 1
+
+else:
+    #if incorrect, then score will not increase
+    print("Incorrect. The correct answer was A.")
+print("")
+
+# question 4
+print("Question 4: What is an early warning sign of caregiver stress?")
+print("A) Feeling energized every day")
+print("B) Losing interest in activities you once enjoyed")
+print("C) Sleeping too well")
+print("D) Having too much free time")
+
+ques4_answer = input("Your answer: ")
+if ques4_answer == "B" or ques4_answer == "b":
+    print("Correct!")
+    
+    #if the user chooses the correct answer, then score will add increment of 1 
+    score = score + 1
+
+else:
+    #if incorrect, then score will not increase
+    print("Incorrect. The correct answer was B.")
+print("")
+
+# question 5
+print("Question 5: Which resource provides FREE help connecting caregivers in Atlanta?")
+print("A) Doordash")
+#resource for caregivers in the atlanta area 
+print("B) EmpowerLine (empowerline.org)")
+print("C) Search engines")
+print("D) Github")
+
+ques5_answer = input("Your answer: ")
+if ques5_answer == "B" or ques5_answer == "b":
+    print("Correct!")
+    
+    #if the user chooses the correct answer, then score will add increment of 1 
+    score = score + 1
+    
+else:
+    #if incorrect, then score will not increase
+    print("Incorrect. The correct answer was B.")
+print("")
+
+# final score calculation
+print("Calculating final score.")
+
+#calculates score out of 5, using the score variable declared above
+print("You got " + str(score) + " out of 5.")
+
+# if statements print depenting on score variable
+if score == 5:
+    #if 5, then user is an expert 
+    print("5/5 - You are an expert on caregiving!")
+
+if score == 4:
+    #if 4, then user is an semi-expert
+    print("4/5 - You are a semi-caregiver expert! Just one shy!")
+    
+    #if 3, then user is knowledgable
+if score == 3:
+    print("3/5 - You're so close, and knowledgeable about caregiving!")
+
+#if score is < 3, then user will not see total out of 5
+if score < 3:
+    print("You are learning, and that's what caregiving is all about :) ")
+print("")
