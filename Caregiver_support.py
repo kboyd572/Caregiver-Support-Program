@@ -45,16 +45,19 @@ name = input ("Hello, what is your name?")
 print ("Hello, " + name)
 
 #Caregiver Explaination
-print ("Who is a Caregiver?")
-print ("A caregiver is a person who provides physical or psychological care to someone else.")
-print ("Caregivers help others who aren’t able to help themselves fully on their own due to " \
-"\n declining health, an illness, injury or an underlying medical condition like: " \
-"\n Alzheimer’s disease or dementia." \
-"\n Cancer. \n Chronic illness." \
-"\n Mental health conditions." \
-" \n Multiple sclerosis." \
-"\n Parkinson’s disease.\n Stroke." \
-"\n Traumatic brain injuries.")
+print("Who is a Caregiver?")
+print("A caregiver is a person who provides physical or psychological care to someone else.")
+print("Caregivers help others who aren’t able to help themselves fully on their own due to")
+print("declining health, an illness, injury or an underlying medical condition like:")
+print("- Alzheimer’s disease or dementia")
+print("- Cancer")
+print("- Chronic illness")
+print("- Mental health conditions")
+print("- Multiple sclerosis")
+print("- Parkinson’s disease")
+print("- Stroke")
+print("- Traumatic brain injuries")
+print("")
 
 def location ():
     #get user location - ATL is only open location
