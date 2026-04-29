@@ -8,8 +8,6 @@
     # Daily quote
     # Caregiver quiz
 
-import random  #selecting a random daily quote
-
 # ***** RUBRIC GUIDELINES:  ********
 # ______________________________________________
 # Code Functionality:
@@ -36,9 +34,9 @@ quotes = [
     '“It is so important, as a caregiver, not to become so enmeshed in your role that you lose yourself.” - Dana Reeve'
     '“It is not how much you do, but how much love you put into the doing.” - Mother Teresa'
     '“Never believe that a few caring people can’t change the world. For, indeed, that`s all who ever have.” - Margaret Mead'
-    # '“Caregiving often calls us to lean into love we didn’t know was possible.” - Tia Walker'
-    # '“If you have the courage to begin, you have the courage to succeed.” - David Viscott'
-    # '“Rest and self-care are so important. When you take time to replenish your spirit, it allows you to serve others from the overflow.” - Eleanor Brown'
+    '“Caregiving often calls us to lean into love we didn’t know was possible.” - Tia Walker'
+     '“If you have the courage to begin, you have the courage to succeed.” - David Viscott'
+     '“Rest and self-care are so important. When you take time to replenish your spirit, it allows you to serve others from the overflow.” - Eleanor Brown'
 ]
 
 
@@ -112,8 +110,37 @@ def community ():
     print ("")
 
 def daily_quote():
-    print ("")
-    print ("")
+    print(".𖥔 ݁ ˖𓂃.☘︎ ݁˖ Daily Quote .𖥔 ݁ ˖𓂃.☘︎ ݁˖ ")
+
+#user will pick a number in order to pick an inspirational quote
+print("Pick a number between 1 and 6 to see your inspirational quote:")
+quote_choice = input("Enter number: ")
+
+#user chooses a number and the follow quotes will appear by number
+if quote_choice == "1":
+    print("“It is so important, as a caregiver, not to become so enmeshed in your role that you lose yourself.” - Dana Reeve")
+
+elif quote_choice == "2":
+    print("“It is not how much you do, but how much love you put into the doing.” - Mother Teresa")
+
+elif quote_choice == "3":
+    print("“Never believe that a few caring people can't change the world. For, indeed, that's all who ever have.” - Margaret Mead")
+
+elif quote_choice == "4":
+    print("“Caregiving often calls us to lean into love we didn't know was possible.” - Tia Walker")
+
+elif quote_choice == "5":
+    print("“If you have the courage to begin, you have the courage to succeed.” - David Viscott")
+
+elif quote_choice == "6":
+    print("“Rest and self-care are so important. When you take time to replenish your spirit, it allows you to serve others from the overflow.” - Eleanor Brown")
+
+else:
+    # if user does not enter a number between 1-6
+    print("That was not a number between 1 and 6, please try again!")
+    print("                      ฅ^•ﻌ•^ฅ                           ")
+print("")
+
 
 def caregiver_quiz():
 #quiz for user to test their knowledge on caregivers
@@ -233,6 +260,8 @@ print("You got " + str(score) + " out of 5.")
 if score == 5:
     #if 5, then user is an expert 
     print("5/5 - You are an expert on caregiving!")
+    
+    print("                     ฅ₍^•⩊ •マⳊ                               ")
 
 if score == 4:
     #if 4, then user is an semi-expert
@@ -245,4 +274,5 @@ if score == 3:
 #if score is < 3, then user will not see total out of 5
 if score < 3:
     print("You are learning, and that's what caregiving is all about :) ")
-print("")
+    print ("                          ദ്ദി◝ ⩊ ◜)                           ")
+    print(" ")
