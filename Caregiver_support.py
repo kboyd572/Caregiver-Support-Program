@@ -8,6 +8,8 @@
     # Daily quote
     # Caregiver quiz
 
+import random  #selecting a random daily quote
+
 # ***** RUBRIC GUIDELINES:  ********
 # ______________________________________________
 # Code Functionality:
