@@ -39,12 +39,15 @@ quotes = [
      '“Rest and self-care are so important. When you take time to replenish your spirit, it allows you to serve others from the overflow.” - Eleanor Brown'
 ]
 
-
+def user_start():
 #Ask for user name, so user can be address and program is more personalable
-name = input ("Hello, what is your name?")
-print ("Hello, " + name)
+    name = input ("Hello, what is your name? ")
+    print ("Hello, " + name)
 
 #Caregiver Explaination
+print ("")
+print ("First let's review what a caregiver is (◍•ᴗ•◍)")
+print ("-------------------------------------------------")
 print("Who is a Caregiver?")
 print("A caregiver is a person who provides physical or psychological care to someone else.")
 print("Caregivers help others who aren’t able to help themselves fully on their own due to")
@@ -67,28 +70,19 @@ if loc.startswith == 'y':
 else:
     print ("")
 
+# **************** Well being ***********************************
 
 #ask user how they are feeling, because this is something every caregiver should acknowlege
 def well_being():
-    mood = input ("First, we want to ask - How are you feeling?\n" \
-    "Enter G for 'Good', B for 'Bad', or Ok for 'Okay'")
-    if mood.isupper() == "G":
-        print ("That is great! We are happy you are feeling good." \
-        "\n Please refer to our Main Menu.")
-        #return menu()
-
-#menu options 
-    # Where to find support
-    # How to cope (hobbies, habits, forums)
-    # Community (local groups)
-    # Daily quote
-    # Caregiver quiz
-def menu ():
-    options_menu = "Menu"
-    print ("Please see our options below: ")
-print ("") 
-         
-
+    # ask user how they are feeling
+    mood = input("First, we want to ask - How are you feeling?\nEnter G for 'Good', B for 'Bad', or OK for 'Okay': ")
+    if mood.lower() == "g":
+        print("That is great! We are happy you are feeling good.")
+    elif mood.lower() == "b":
+        print("Sorry to hear that, and it's okay to have bad days. ʕ￫ᴥ￩　ʔ \n We will find you resources to help! ʕ　·ᴥ·ʔ ")
+    else:
+        print("Incorrect selection, but thank you for sharing.")
+    print("")
 
 def support():
     print ("Here are a list of websites to find local support groups")
@@ -112,12 +106,16 @@ def community ():
     print ("")
     print ("")
 
+
+# **************** quotes ***********************************
+
 def daily_quote():
     print(".𖥔 ݁ ˖𓂃.☘︎ ݁˖ Daily Quote .𖥔 ݁ ˖𓂃.☘︎ ݁˖ ")
 
 #user will pick a number in order to pick an inspirational quote
 print("Pick a number between 1 and 6 to see your inspirational quote:")
 quote_choice = input("Enter number: ")
+
 
 #user chooses a number and the follow quotes will appear by number
 if quote_choice == "1":
@@ -144,7 +142,7 @@ else:
     print("                      ฅ^•ﻌ•^ฅ                           ")
 print("")
 
-
+# **************** QUIZ ***********************************
 def caregiver_quiz():
 #quiz for user to test their knowledge on caregivers
     print("CAREGIVER KNOWLEDGE QUIZ")
@@ -279,3 +277,30 @@ if score < 3:
     print("You are learning, and that's what caregiving is all about :) ")
     print ("                          ദ്ദി◝ ⩊ ◜)                           ")
     print(" ")
+
+
+def main ():
+
+#menu options 
+    # Where to find support
+    # How to cope (hobbies, habits, forums)
+    # Community (local groups)
+    # Daily quote
+    # Caregiver quiz
+    start_menu = True
+    while start_menu = True
+   
+   
+    print ("Please see our options below: ")
+    print("1. Where to find support")
+    print("2. How to cope")
+    print("3. Community (local groups)")
+    print("4. Daily quote")
+    print("5. Caregiver quiz")
+    print ("♥︎\(◡̈ )/♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  \( ◡̈)/♥︎") 
+
+menu_choice = input("Enter a number to select an option: ")
+print ("♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎ ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎")
+
+
+
