@@ -281,6 +281,11 @@ if score < 3:
 
 def main ():
 
+    user_start()
+    location()
+    well_being()
+
+
 #menu options 
     # Where to find support
     # How to cope (hobbies, habits, forums)
