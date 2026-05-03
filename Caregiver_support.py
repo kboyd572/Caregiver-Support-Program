@@ -3,8 +3,8 @@
     # Location
     # Ask about their well-being
     # Where to find support
+    # Community support
     # How to cope (hobbies, habits, forums)
-    # Community (local groups)
     # Daily quote
     # Caregiver quiz
 
@@ -29,39 +29,30 @@
 # Changes are committed regularly and well commented. Readme file is thorough. (Verified through activity log)
 # _______________________________________________________________________________________________________________________
 
-# inspirational quotes to show user each session
-quotes = [
-    '“It is so important, as a caregiver, not to become so enmeshed in your role that you lose yourself.” - Dana Reeve'
-    '“It is not how much you do, but how much love you put into the doing.” - Mother Teresa'
-    '“Never believe that a few caring people can’t change the world. For, indeed, that`s all who ever have.” - Margaret Mead'
-    '“Caregiving often calls us to lean into love we didn’t know was possible.” - Tia Walker'
-     '“If you have the courage to begin, you have the courage to succeed.” - David Viscott'
-     '“Rest and self-care are so important. When you take time to replenish your spirit, it allows you to serve others from the overflow.” - Eleanor Brown'
-]
 
+#**************** START ***********************
 def user_start():
 #Ask for user name, so user can be address and program is more personalable
     name = input ("Hello, what is your name? ")
     print ("Hello, " + name)
 
-#Caregiver Explaination
-print ("")
-print ("First let's review what a caregiver is (◍•ᴗ•◍)")
-print ("-------------------------------------------------")
-print("Who is a Caregiver?")
-print("A caregiver is a person who provides physical or psychological care to someone else.")
-print("Caregivers help others who aren’t able to help themselves fully on their own due to")
-print("declining health, an illness, injury or an underlying medical condition like:")
-print("- Alzheimer’s disease or dementia")
-print("- Cancer")
-print("- Chronic illness")
-print("- Mental health conditions")
-print("- Multiple sclerosis")
-print("- Parkinson’s disease")
-print("- Stroke")
-print("- Traumatic brain injuries")
-print("")
 
+
+# ************* Caregiver explanation **************
+#Caregiver Explaination
+def care_explained():
+    print ("")
+    print ("First let's review what a caregiver is (◍•ᴗ•◍)")
+    print ("-------------------------------------------------")
+    print("Who is a Caregiver?")
+    print("A caregiver is a person who provides physical or psychological care to someone else.")
+    print("Caregivers help others who aren’t able to help themselves fully on their own due to")
+    print("declining health, an illness, injury or an underlying medical condition like:")
+    print("- Alzheimer’s disease or dementia, Parkinson's, MS, Chronic illnesses, etc.")
+    print("")
+
+
+# **************** Location ***********************************
 def location ():
     #get user location - ATL is only open location
     loc = input ("Are you located in Atlanta (metro Atlanta is acceptable)? (Y/N)")
@@ -84,6 +75,8 @@ def well_being():
         print("Incorrect selection, but thank you for sharing.")
     print("")
 
+
+# **************** Support ***********************************
 def support():
     print ("Here are a list of websites to find local support groups")
     print ("Resources for Caregivers - https://empowerline.org/resource/resources-for-caregivers/")
@@ -92,23 +85,17 @@ def support():
 
 def cope ():
     print ("How to cope: ")
-    print ("Caring for yourself while caring for others - https://magazine.medlineplus.gov/article/caring-for-yourself-while-caring-for-others")
-    print ("Healthy Ways to Overcome Caregiver Burnout - https://www.brainandlife.org/articles/healthy-ways-overcome-caregiver-burnout")
+    print ("Caring for yourself while caring for others: https://magazine.medlineplus.gov/article/caring-for-yourself-while-caring-for-others")
+    print ("Healthy Ways to Overcome Caregiver Burnout: https://www.brainandlife.org/articles/healthy-ways-overcome-caregiver-burnout")
     # link for caregiver tips - https://www.mayoclinic.org/healthy-lifestyle/stress-management/in-depth/caregiver-stress/art-20044784
     # link - https://www.caregiver.org/resource/emotional-side-caregiving/
     # link - https://my.clevelandclinic.org/health/diseases/9225-caregiver-burnout
     # link - https://www.nia.nih.gov/health/caregiving/taking-care-yourself-tips-caregivers
 
-def community ():
-    print ("Reddit pages dedicated to caregivers")
-    print ("")
-    print ("")
-    print ("")
-    print ("")
 
 
 # **************** quotes ***********************************
-
+# inspirational quotes to show user each session
 def daily_quote():
     print(".𖥔 ݁ ˖𓂃.☘︎ ݁˖ Daily Quote .𖥔 ݁ ˖𓂃.☘︎ ݁˖ ")
 
@@ -144,6 +131,19 @@ print("")
 
 # **************** QUIZ ***********************************
 def caregiver_quiz():
+
+# putting quiz in loop to aviod errors - testing
+# 
+# while True:
+#         print("Question 1: What is caregiver burnout?")
+#         print("A) Feeling bored with caregiving")
+#         print("B) A state of physical, emotional, and mental exhaustion from caregiving")
+#         print("C) Taking too many breaks")
+#         print("D) Being paid too little for caregiving")
+        
+#         ques1_answer = input("Your answer: ").upper() # prints 
+#         print("You chose: " + ques1_answer)
+
 #quiz for user to test their knowledge on caregivers
     print("CAREGIVER KNOWLEDGE QUIZ")
 print("____________________________________  ")
@@ -279,9 +279,11 @@ if score < 3:
     print(" ")
 
 
-def main ():
 
+# ******** MAIN ***********
+def main ():
     user_start()
+    care_explained()
     location()
     well_being()
 
@@ -292,20 +294,39 @@ def main ():
     # Community (local groups)
     # Daily quote
     # Caregiver quiz
+    
+    
+# Main menu and view for user
+
     start_menu = True
-    while start_menu = True
-   
-   
-    print ("Please see our options below: ")
-    print("1. Where to find support")
-    print("2. How to cope")
-    print("3. Community (local groups)")
-    print("4. Daily quote")
-    print("5. Caregiver quiz")
-    print ("♥︎\(◡̈ )/♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  \( ◡̈)/♥︎") 
+    #loop created so user can continously make choices until wanting to exit
+    while start_menu == True:
+        print("♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎ ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎") 
+        print("Please see our options below: ")
+        print("1. Where to find support")
+        print("2. How to cope")
+        print("3. Daily quote")
+        print("4. Caregiver quiz")
+        print("5. Exit Program")
+        print("♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎ ♥︎  ♥︎  ♥︎  ♥︎  ♥︎ ♥︎")
 
-menu_choice = input("Enter a number to select an option: ")
-print ("♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎ ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎")
+        menu_choice = input("Enter a number to select an option: ")
 
+        if menu_choice == "1":
+            support()
+        elif menu_choice == "2":
+            cope()
+        elif menu_choice == "3":
+            daily_quote()
+        elif menu_choice == "4":
+            caregiver_quiz()
+        elif menu_choice == "5":
+            print("Thank you for being a caregiver or wantining to understand one! ♥︎")
+            print("♥︎\(◡̈ )/♥︎ Goodbye ♥︎  \( ◡̈)/♥︎")
+            start_menu = False # This breaks the loop and ends the program
+        else:
+            print("Invalid choice, please select 1-5.")
 
+# start of caregiver app
+main()
 
