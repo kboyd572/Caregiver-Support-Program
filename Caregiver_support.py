@@ -56,10 +56,10 @@ def care_explained():
 def location ():
     #get user location - ATL is only open location
     loc = input ("Are you located in Atlanta (metro Atlanta is acceptable)? (Y/N)")
-if loc.startswith == 'y':
-    print ("Great! We have recoures available for you.")
-else:
-    print ("")
+    if loc.lower().startswith('y'):
+        print ("Great! We have recoures available for you.")
+    else:
+        print ("")
 
 # **************** Well being ***********************************
 
@@ -94,35 +94,35 @@ def cope():
 def daily_quote():
     print(".𖥔 ݁ ˖𓂃.☘︎ ݁˖ Daily Quote .𖥔 ݁ ˖𓂃.☘︎ ݁˖ ")
 
-#user will pick a number in order to pick an inspirational quote
-print("Pick a number between 1 and 6 to see your inspirational quote:")
-quote_choice = input("Enter number: ")
+    #user will pick a number in order to pick an inspirational quote
+    print("Pick a number between 1 and 6 to see your inspirational quote:")
+    quote_choice = input("Enter number: ")
 
 
-#user chooses a number and the follow quotes will appear by number
-if quote_choice == "1":
-    print("“It is so important, as a caregiver, not to become so enmeshed in your role that you lose yourself.” - Dana Reeve")
+    #user chooses a number and the follow quotes will appear by number
+    if quote_choice == "1":
+        print("“It is so important, as a caregiver, not to become so enmeshed in your role that you lose yourself.” - Dana Reeve")
 
-elif quote_choice == "2":
-    print("“It is not how much you do, but how much love you put into the doing.” - Mother Teresa")
+    elif quote_choice == "2":
+        print("“It is not how much you do, but how much love you put into the doing.” - Mother Teresa")
 
-elif quote_choice == "3":
-    print("“Never believe that a few caring people can't change the world. For, indeed, that's all who ever have.” - Margaret Mead")
+    elif quote_choice == "3":
+        print("“Never believe that a few caring people can't change the world. For, indeed, that's all who ever have.” - Margaret Mead")
 
-elif quote_choice == "4":
-    print("“Caregiving often calls us to lean into love we didn't know was possible.” - Tia Walker")
+    elif quote_choice == "4":
+        print("“Caregiving often calls us to lean into love we didn't know was possible.” - Tia Walker")
 
-elif quote_choice == "5":
-    print("“If you have the courage to begin, you have the courage to succeed.” - David Viscott")
+    elif quote_choice == "5":
+        print("“If you have the courage to begin, you have the courage to succeed.” - David Viscott")
 
-elif quote_choice == "6":
-    print("“Rest and self-care are so important. When you take time to replenish your spirit, it allows you to serve others from the overflow.” - Eleanor Brown")
+    elif quote_choice == "6":
+        print("“Rest and self-care are so important. When you take time to replenish your spirit, it allows you to serve others from the overflow.” - Eleanor Brown")
 
-else:
-    # if user does not enter a number between 1-6
-    print("That was not a number between 1 and 6, please try again!")
-    print("                      ฅ^•ﻌ•^ฅ                           ")
-print("")
+    else:
+        # if user does not enter a number between 1-6
+        print("That was not a number between 1 and 6, please try again!")
+        print("                      ฅ^•ﻌ•^ฅ                           ")
+    print("")
 
 
 
