@@ -42,72 +42,94 @@ def open_url(url):
 def user_start():
     name = simpledialog.askstring("Welcome", "Hello, what is your name?")
     if name:
-        messagebox.showinfo("Greeting", "Hello, " + name)
+        messagebox.showinfo("Hello, " + name)
 
 # ************* Caregiver explanation **************
-#Caregiver Explaination
+
 def care_explained():
-    print ("")
-    print ("First let's review what a caregiver is (◍•ᴗ•◍)")
-    print ("-------------------------------------------------")
-    print("Who is a Caregiver?")
-    print("A caregiver is a person who provides physical or psychological care to someone else.")
-    print("Caregivers help others who aren’t able to help themselves fully on their own due to")
-    print("declining health, an illness, injury or an underlying medical condition like:")
-    print("- Alzheimer’s disease or dementia, Parkinson's, MS, Chronic illnesses, etc.")
-    print("")
+    explanation_text = (
+        "First let's review what a caregiver is (◍•ᴗ•◍)\n"
+        "-------------------------------------------------\n"
+        #Caregiver Explaination
+        "Who is a Caregiver?\n"
+        "A caregiver is a person who provides physical or psychological care to someone else.\n"
+        "Caregivers help others who aren’t able to help themselves fully on their own due to\n"
+        "declining health, an illness, injury or an underlying medical condition like:\n"
+        "- Alzheimer’s disease or dementia, Parkinson's, MS, Chronic illnesses, etc."
+    )
+    # popup box that will explain caregiver
+    messagebox.showinfo("Who is a Caregiver?", explanation_text)
 
 
 # **************** Location ***********************************
-def location ():
-    #get user location - ATL is only open location
-    loc = input ("Are you located in Atlanta (metro Atlanta is acceptable)? (Y/N)")
-    if loc.lower().startswith('y'):
-        print ("Great! We have recoures available for you.")
-    else:
-        print ("")
+#asks for user loccation
+def location():
+    #atlanta is only available city, but will validate answer
+    loc = simpledialog.askstring("Location", "Are you located in Atlanta? (Y/N)")
+    if loc and loc.lower().startswith('y'):
+        messagebox.showinfo("Great! We have resources available for you.")
 
 # **************** Well being ***********************************
 
 #ask user how they are feeling, because this is something every caregiver should acknowlege
-def well_being():
-    # ask user how they are feeling
-    mood = input("First, we want to ask - How are you feeling?\nEnter G for 'Good', B for 'Bad', or OK for 'Okay': ")
-    if mood.lower() == "g":
-        print("That is great! We are happy you are feeling good.")
-    elif mood.lower() == "b":
-        print("Sorry to hear that, and it's okay to have bad days. ʕ￫ᴥ￩　ʔ \n We will find you resources to help! ʕ　·ᴥ·ʔ ")
-    else:
-        print("Incorrect selection, but thank you for sharing.")
-    print("")
 
+        def well_being():
+    # Ask user how they are feeling using a dialog box
+            mood = simpledialog.askstring("First, we want to ask - How are you feeling?\nEnter G for 'Good', B for 'Bad', or OK for 'Okay':")
+    
+        # checks if user is okay and if the user inputs incorrectt info
+        if mood:
+            if mood.lower() == "g":
+                messagebox.showinfo("That's great! We are happy you are feeling good.")
+            elif mood.lower() == "b":
+                messagebox.showinfo("Sorry to hear that, and it's okay to have bad days. ʕ￫ᴥ￩　ʔ \n We will find you resources to help! ʕ　·ᴥ·ʔ ")
+            else:
+                # safe guard - if uses enter the wrong input 
+                messagebox.showinfo("Incorrect input, but thank you for sharing  \( ◡̈)/♥︎ ")
 
 # **************** Support ***********************************
 def support():
-    print ("Here are a list of websites to find local support groups")
-    print ("Resources for Caregivers - https://empowerline.org/resource/resources-for-caregivers/")
-    print ("Peer Support Groups - http://shepherd.org/admissions/patient-experience/peer-support/groups/")
+#     print ("Here are a list of websites to find local support groups")
+#     print ("Resources for Caregivers - https://empowerline.org/resource/resources-for-caregivers/")
+#     print ("Peer Support Groups - http://shepherd.org/admissions/patient-experience/peer-support/groups/")
    
+
+    #make an additional window on top of my main window
+    sw = tk.Toplevel()
+
+    #title of support window
+    sw.title("Support")
+
+    #size of the window
+    sw.geometry("300x400")
+
+    #adds the text inside of the window; words inside of ""
+    tk.Label(sw, text = "Click a link to find support:", font = ("Arial", 10, "bold")).pack(pady = 10)
+    
+    #creates the hyperlink - makes the text line purple and changes mouse to pointer, so hyperlink is easer to access
+    l1 = tk.Label(sw, text = "EmpowerLine Resources", fg = "purple", cursor = "hand2")
+    l1.pack(pady = 5)
+    
+    #makes the link clickable and will open link
+    l1.bind("<Button-1>", lambda e: open_url("https://empowerline.org/resource/resources-for-caregivers/"))
+
+
+
 # ********** coping *****************
 def cope():
-    print("How to cope: ")
-    print("Caring for yourself: https://magazine.medlineplus.gov/article/caring-for-yourself-while-caring-for-others")
-    print("Healthy Ways to Overcome Burnout: https://www.brainandlife.org/articles/healthy-ways-overcome-caregiver-burnout")
+    # print("How to cope: ")
+    # print("Caring for yourself: https://magazine.medlineplus.gov/article/caring-for-yourself-while-caring-for-others")
+    # print("Healthy Ways to Overcome Burnout: https://www.brainandlife.org/articles/healthy-ways-overcome-caregiver-burnout")
+
+    cw = tk.Toplevel()
+    cw.title("Coping")
+    cw.geometry("300x400")
+
+    
 
 
 # **************** quotes ***********************************
 # inspirational quotes to show user each session
-def daily_quote():
-    print(".𖥔 ݁ ˖𓂃.☘︎ ݁˖ Daily Quote .𖥔 ݁ ˖𓂃.☘︎ ݁˖ ")
-
-    #user will pick a number in order to pick an inspirational quote
-    print("Pick a number between 1 and 6 to see your inspirational quote:")
-    quote_choice = input("Enter number: ")
-
-
-
-
-
 
 def daily_quote():
     #user chooses a number and the follow quotes will appear by number
