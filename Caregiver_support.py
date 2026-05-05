@@ -29,14 +29,43 @@
 # Changes are committed regularly and well commented. Readme file is thorough. (Verified through activity log)
 # _______________________________________________________________________________________________________________________
 
+#creating UI for program - import tinker Python's GUI 
+import tkinter as tk
+from tkinter import simpledialog
+from tkinter import messagebox
+import webbrowser
+
+
 
 #**************** START ***********************
+# def user_start():
+# #Ask for user name, so user can be address and program is more personalable
+#     name = input ("Hello, what is your name? ")
+#     print ("Hello, " + name)
+
+#testing ui greeting 
 def user_start():
-#Ask for user name, so user can be address and program is more personalable
-    name = input ("Hello, what is your name? ")
-    print ("Hello, " + name)
+    name = simpledialog.askstring("Test", "Is the name popup working?")
+    if name:
+        messagebox.showinfo("Test", f"Hello, {name}! This part works.")
 
+#testing ui closing/exit 
+def exit_program(root_window):
+    messagebox.showinfo("Goodbye", "Thank you! Goodbye ♥︎")
+    root_window.destroy()
 
+# ui foundation 
+root = tk.Tk()
+root.title("Testing UI ")
+root.geometry("300x200")
+
+# testing UI buttings
+tk.Button(root, text="Greetings test", command=user_start).pack(pady=10)
+tk.Button(root, text=" Exit test", command=lambda: exit_program(root)).pack(pady=10)
+
+user_start()
+
+root.mainloop()
 
 # ************* Caregiver explanation **************
 #Caregiver Explaination
@@ -283,12 +312,17 @@ def caregiver_quiz():
 
 
 
-# ******** MAIN ***********
+# ******** MAIN with UI added ***********
 def main ():
+
     user_start()
-    care_explained()
-    location()
-    well_being()
+root.mainloop()
+    # user_start()
+    # care_explained()
+    # location()
+    # well_being()
+
+    
     
 # Main menu and view for user
     start_menu = True
@@ -321,5 +355,6 @@ def main ():
             print("Invalid choice, please select 1-5.")
 
 # start of caregiver app
+
 main()
 
