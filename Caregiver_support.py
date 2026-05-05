@@ -1,12 +1,4 @@
-# Caregiver App Support
-# Program implementations
-    # Location
-    # Ask about their well-being
-    # Where to find support
-    # Community support
-    # How to cope (hobbies, habits, forums)
-    # Daily quote
-    # Caregiver quiz
+# Caregiver App Support - Coping with Care 
 
 # ***** RUBRIC GUIDELINES:  ********
 # ______________________________________________
@@ -31,41 +23,26 @@
 
 #creating UI for program - import tinker Python's GUI 
 import tkinter as tk
-from tkinter import simpledialog
-from tkinter import messagebox
+from tkinter import simpledialog # creates UI popup for user input
+from tkinter import messagebox # creates UI for information and ques
 import webbrowser
 
-
+#function that open URLs in the browser
+def open_url(url):
+    webbrowser.open_new(url)
 
 #**************** START ***********************
+
+# **** Pre-UI Start
 # def user_start():
 # #Ask for user name, so user can be address and program is more personalable
 #     name = input ("Hello, what is your name? ")
 #     print ("Hello, " + name)
 
-#testing ui greeting 
 def user_start():
-    name = simpledialog.askstring("Test", "Is the name popup working?")
+    name = simpledialog.askstring("Welcome", "Hello, what is your name?")
     if name:
-        messagebox.showinfo("Test", f"Hello, {name}! This part works.")
-
-#testing ui closing/exit 
-def exit_program(root_window):
-    messagebox.showinfo("Goodbye", "Thank you! Goodbye ♥︎")
-    root_window.destroy()
-
-# ui foundation 
-root = tk.Tk()
-root.title("Testing UI ")
-root.geometry("300x200")
-
-# testing UI buttings
-tk.Button(root, text="Greetings test", command=user_start).pack(pady=10)
-tk.Button(root, text=" Exit test", command=lambda: exit_program(root)).pack(pady=10)
-
-user_start()
-
-root.mainloop()
+        messagebox.showinfo("Greeting", "Hello, " + name)
 
 # ************* Caregiver explanation **************
 #Caregiver Explaination
@@ -128,32 +105,36 @@ def daily_quote():
     quote_choice = input("Enter number: ")
 
 
+
+
+
+
+def daily_quote():
     #user chooses a number and the follow quotes will appear by number
+    quote_choice = simpledialog.askstring(".𖥔 ݁ ˖𓂃.☘︎ ݁˖ Daily Quote .𖥔 ݁ ˖𓂃.☘︎ ݁","\n Pick a number between 1 and 6 to see your inspirational quote:")
+
+    
+    # if statements to go through quotes by choice
     if quote_choice == "1":
-        print("“It is so important, as a caregiver, not to become so enmeshed in your role that you lose yourself.” - Dana Reeve")
+        messagebox.showinfo("“It is so important, as a caregiver, not to become so enmeshed in your role that you lose yourself.” - Dana Reeve")
 
     elif quote_choice == "2":
-        print("“It is not how much you do, but how much love you put into the doing.” - Mother Teresa")
+        messagebox.showinfo("“It is not how much you do, but how much love you put into the doing.” - Mother Teresa")
 
     elif quote_choice == "3":
-        print("“Never believe that a few caring people can't change the world. For, indeed, that's all who ever have.” - Margaret Mead")
+        messagebox.showinfo("“Never believe that a few caring people can't change the world. For, indeed, that's all who ever have.” - Margaret Mead")
 
     elif quote_choice == "4":
-        print("“Caregiving often calls us to lean into love we didn't know was possible.” - Tia Walker")
+        messagebox.showinfo("“Caregiving often calls us to lean into love we didn't know was possible.” - Tia Walker")
 
     elif quote_choice == "5":
-        print("“If you have the courage to begin, you have the courage to succeed.” - David Viscott")
+        messagebox.showinfo("“If you have the courage to begin, you have the courage to succeed.” - David Viscott")
 
     elif quote_choice == "6":
-        print("“Rest and self-care are so important. When you take time to replenish your spirit, it allows you to serve others from the overflow.” - Eleanor Brown")
-
+        messagebox.showinfo("“Rest and self-care are so important. When you take time to replenish your spirit, it allows you to serve others from the overflow.” - Eleanor Brown")
     else:
-        # if user does not enter a number between 1-6
-        print("That was not a number between 1 and 6, please try again!")
-        print("                      ฅ^•ﻌ•^ฅ                           ")
-    print("")
-
-
+        # safe guard for errors 
+        messagebox.showwarning("That was not a number between 1 and 6, please try again!  ฅ^•ﻌ•^ฅ  ")
 
 # **************** QUIZ ***********************************
 def caregiver_quiz():
@@ -310,51 +291,40 @@ def caregiver_quiz():
         print ("                          ദ്ദി◝ ⩊ ◜)                           ")
     print(" ")
 
+# **** EXIT  ******
+#
+def exit_program(root_window):
+    # message when user exits program
+    exit_msg = (
+        "Thank you for being a caregiver or wanting to understand one! ♥︎\n\n"
+        "♥︎\(◡̈ )/♥︎ Goodbye ♥︎  \( ◡̈)/♥︎"
+    )
+    messagebox.showinfo("Goodbye", exit_msg)
+    root_window.destroy()
 
 
 # ******** MAIN with UI added ***********
-def main ():
+def main():
+    root = tk.Tk()
+    root.title("Caregiver App Support")
+    root.geometry("300x500")
+
+    tk.Label(root, text = "Main Menu", font = ("Arial", 12, "bold")).pack(pady = 10)
+    
+    # main menu buttons 
+    tk.Button(root, text = "Caregiver Explanation", command = care_explained, width = 20).pack(pady = 5)
+    tk.Button(root, text = "Location Check", command = location, width = 20).pack(pady = 5)
+    tk.Button(root, text = "Well-being Check", command = well_being, width = 20).pack(pady = 5)
+    tk.Button(root, text = "Find Support", command = support, width = 20).pack(pady = 5)
+    tk.Button(root, text = "How to Cope", command = cope, width = 20).pack(pady = 5)
+    tk.Button(root, text = "Daily Quote", command = daily_quote, width = 20).pack(pady = 5)
+    tk.Button(root, text = "Caregiver Quiz", command = caregiver_quiz, width = 20).pack(pady = 5)
+    
+    # Exit Button with your original message
+    tk.Button(root, text = "Exit", command = lambda: exit_program(root), bg = "#ddc0ea").pack(pady = 20)
 
     user_start()
-root.mainloop()
-    # user_start()
-    # care_explained()
-    # location()
-    # well_being()
+    root.mainloop()
 
-    
-    
-# Main menu and view for user
-    start_menu = True
-    #loop created so user can continously make choices until wanting to exit
-    while start_menu == True:
-        print("♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎ ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎") 
-        print("Please see our options below: ")
-        print("1. Where to find support")
-        print("2. How to cope")
-        print("3. Daily quote")
-        print("4. Caregiver quiz")
-        print("5. Exit Program")
-        print("♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎  ♥︎ ♥︎  ♥︎  ♥︎  ♥︎  ♥︎ ♥︎")
-
-        menu_choice = input("Enter a number to select an option: ")
-
-        if menu_choice == "1":
-            support()
-        elif menu_choice == "2":
-            cope()
-        elif menu_choice == "3":
-            daily_quote()
-        elif menu_choice == "4":
-            caregiver_quiz()
-        elif menu_choice == "5":
-            print("Thank you for being a caregiver or wantining to understand one! ♥︎")
-            print("♥︎\(◡̈ )/♥︎ Goodbye ♥︎  \( ◡̈)/♥︎")
-            start_menu = False # This breaks the loop and ends the program
-        else:
-            print("Invalid choice, please select 1-5.")
-
-# start of caregiver app
-
-main()
-
+if __name__ == "__main__":
+    main()
